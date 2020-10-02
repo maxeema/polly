@@ -161,7 +161,7 @@ extension StringCustomExt on String {
 
 extension MapExt on Map<String, dynamic> {
   
-  saveTo(File file) => file.writeAsStringSync(jsonEncode(this));
+  saveTo(File file) => file.writeAsStringSync(JsonEncoder.withIndent('    ').convert(this));
 
   bool containsAll(List<String> whichKeys) {
     for (final key in whichKeys) {
