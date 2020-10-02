@@ -1,0 +1,11 @@
+
+# Run
+
+$ dart bin/polly.dart in/es.csv
+
+
+# Docs
+
+https://docs.aws.amazon.com/polly/latest/dg/voicelist.html
+https://docs.aws.amazon.com/polly/latest/dg/SupportedLanguage.html
+

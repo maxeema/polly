@@ -1,0 +1,12 @@
+name: polly
+description: A sample command-line application.
+version: 0.0.1
+
+environment:
+  sdk: '>=2.9.0'
+
+dependencies:
+  crypto: any
+
+dev_dependencies:
+  test: ^1.15.3
