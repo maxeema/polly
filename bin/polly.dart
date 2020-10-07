@@ -60,7 +60,7 @@ main(List<String> args) async {
       final entries = line.splitIndexed(_sep).map((idx, value) =>
           MapEntry(idx, value.removeFirstAndLastChar('"').trim()));
       final entry = Entry.of(entries, columns);
-      final phrase = entry.phrase.normalizeDoubleSpaces();
+      final phrase = entry.phrase.normalizeSpaces();
       final voiceToLang = entry.party == 'S'
           ? voices[lang]['S'][0]
           : voices[lang][entry.sex][entry.party == 'A' ? 0 : 1];

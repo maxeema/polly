@@ -157,7 +157,7 @@ extension StringCustomExt on String {
       .replaceAll(RegExp(r'\s{2,}'), ' ')
       .trim();
 
-  String normalizeDoubleSpaces() => this..replaceAll(RegExp(r'\s{2,}'), ' ');
+  String normalizeSpaces() => this.replaceAll(RegExp(r'\s{2,}'), ' ');
 
 }
 
