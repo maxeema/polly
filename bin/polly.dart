@@ -20,6 +20,7 @@ const _polly = "polly"
 const _ext = 'csv', _sep = ';';
 
 const _db = '../media/audios';
+const _gs_bucket_url = 'gs://heart-school-europe';
 
 const TAG = "Polly";
 
@@ -95,7 +96,7 @@ main(List<String> args) async {
               "\nTry to re-run Polly download script or handle the cause manually!";
         //
         try {
-          await "gsutil".exec("-m cp ${file.path} gs://heart-school-europe/audio/$lang");
+          await "gsutil".exec("-m cp ${file.path} $_gs_bucket_url/audio/$lang");
         } catch (e) {
           // If failed to store just downloaded mp3 at Firebase
           // then delete local copy to keep files synced locally and remotely
@@ -116,7 +117,7 @@ main(List<String> args) async {
     await 2000.ms.delay;
     rethrow;
   } finally {
-    await "gsutil".exec("-m cp -r ${dbJsonFile.path} gs://heart-school.appspot.com/audio");
+    await "gsutil".exec("-m cp -r ${dbJsonFile.path} $_gs_bucket_url/audio");
     dbJson.saveTo(dbJsonFile);
     if (downloaded.isNotEmpty) {
       print('> New downloads:');
