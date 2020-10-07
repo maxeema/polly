@@ -95,7 +95,7 @@ main(List<String> args) async {
               "\nTry to re-run Polly download script or handle the cause manually!";
         //
         try {
-          await "gsutil".exec("-m cp ${file.path} gs://heart-school.appspot.com/audio/$lang");
+          await "gsutil".exec("-m cp ${file.path} gs://heart-school-europe/audio/$lang");
         } catch (e) {
           // If failed to store just downloaded mp3 at Firebase
           // then delete local copy to keep files synced locally and remotely
